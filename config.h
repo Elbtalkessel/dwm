@@ -76,22 +76,23 @@ static int resizehints = 0;    /* 1 means respect size hints in tiled resizals *
 #define FORCE_VSPLIT 1         /* nrowgrid layout: force two clients to always split vertically */
 #include "vanitygaps.c"
 
+// t y u i f
 static const Layout layouts[] = {
-    /* symbol           arrange function */
-    { "[]=",    tile },                   /* Default: Master on left, slaves on right; super + t */
-    { "TTT",    bstack },                 /* Master on top, slaves on bottom; super + shift + t */
+    /* symbol  arrange function */
+    { "[]",     tile },                     /* Default: Master on left, slaves on right; super + t; []= */
+    { "[]",     bstack },                   /* Master on top, slaves on bottom; super + shift + t; TTT */
 
-    { "[@]",    spiral },                 /* Fibonacci spiral; super + y */
-    { "[\\]",    dwindle },               /* Decreasing in size right and leftward; super + shift + y */
+    { "[]",     spiral },                   /* Fibonacci spiral; super + y; [@] */
+    { "[]",      dwindle },                  /* Decreasing in size right and leftward; super + shift + y; [\\] */
 
-    { "[D]",    deck },                   /* Master on left, slaves in monocle-like mode on right; super + u */
-    { "[M]",    monocle },                /* All windows on top of eachother; super + shift + u */
+    { "[]",      deck },                     /* Master on left, slaves in monocle-like mode on right; super + u; [D] */
+    { "[]",      monocle },                  /* All windows on top of eachother; super + shift + u; [M] */
 
-    { "|M|",    centeredmaster },          /* Master in middle, slaves on sides; super + i */
-    { ">M>",    centeredfloatingmaster },  /* Same but master floats; super + shift + i */
+    { "[]",      centeredmaster },           /* Master in middle, slaves on sides; super + i; |M| */
+    { "[]",      centeredfloatingmaster },   /* Same but master floats; super + shift + i; >M> */
 
-    { "><>",    NULL },                    /* no layout function means floating behavior; super + f */
-    { NULL,     NULL },
+    { "[]",      NULL },                     /* no layout function means floating behavior; super + f;><> */
+    { NULL,        NULL },
 };
 
 /* key definitions */
