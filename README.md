@@ -12,3 +12,6 @@ Mostly [Luke's build](https://github.com/LukeSmithxyz/dwm)
 - [vanitygaps](https://dwm.suckless.org/patches/vanitygaps/): Gaps allowed across all layouts.
 - [swallow patch](https://dwm.suckless.org/patches/swallow/): if a program run from a terminal would make it inoperable, it temporarily takes its place to save space.
 - [alpha](https://dwm.suckless.org/patches/alpha/): translucent bar
+
+# Requires
+- Font awesome (community/ttf-font-awesome)

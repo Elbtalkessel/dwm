@@ -55,12 +55,12 @@ static const Rule rules[] = {
      *    WM_CLASS(STRING) = instance, class
      *    WM_NAME(STRING) = title
     */
-    /* class    instance      title            tags mask    isfloating   isterminal  noswallow  monitor */
+    /* class                instance    title             tags mask     isfloating   isterminal noswallow monitor */
     { "Gimp",               NULL,       NULL,             1 << 8,       0,           0,         0,        -1 },
-    { TERMCLASS,                  NULL,       NULL,             0,            0,           1,         0,        -1 },
+    { TERMCLASS,            NULL,       NULL,             0,            0,           1,         0,        -1 },
     { NULL,                 NULL,       "Event Tester",   0,            0,           0,         1,        -1 },
-    { NULL,                 "spterm",   NULL,             SPTAG(0),   1,           1,         0,        -1 },
-    { NULL,                 "spcalc",   NULL,             SPTAG(1),   1,           1,         0,        -1 },
+    { NULL,                 "spterm",   NULL,             SPTAG(0),     1,           1,         0,        -1 },
+    { NULL,                 "spcalc",   NULL,             SPTAG(1),     1,           1,         0,        -1 },
     { "jetbrains-pycharm",  NULL,       NULL,             1 << 1,       0,           0,         0,        -1 },
     { "jetbrains-clion",    NULL,       NULL,             1 << 1,       0,           0,         0,        -1 },
     { "jetbrains-toolbox",  NULL,       NULL,             1 << 1,       1,           0,         0,        -1 },
@@ -73,9 +73,9 @@ static const Rule rules[] = {
 static float mfact     = 0.55; /* factor of master area size [0.05..0.95] */
 static int nmaster     = 1;    /* number of clients in master area */
 static int resizehints = 0;    /* 1 means respect size hints in tiled resizals */
-#define FORCE_VSPLIT 1  /* nrowgrid layout: force two clients to always split vertically */
+#define FORCE_VSPLIT 1         /* nrowgrid layout: force two clients to always split vertically */
 #include "vanitygaps.c"
-// t y u i f
+
 static const Layout layouts[] = {
     /* symbol           arrange function */
     { "[]=",    tile },                   /* Default: Master on left, slaves on right; super + t */
@@ -90,7 +90,7 @@ static const Layout layouts[] = {
     { "|M|",    centeredmaster },          /* Master in middle, slaves on sides; super + i */
     { ">M>",    centeredfloatingmaster },  /* Same but master floats; super + shift + i */
 
-    { "><>",    NULL },            /* no layout function means floating behavior; super + f */
+    { "><>",    NULL },                    /* no layout function means floating behavior; super + f */
     { NULL,     NULL },
 };
 
