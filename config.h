@@ -15,7 +15,7 @@ static int swallowfloating          = 0;        /* 1 means swallow floating wind
 static int smartgaps                = 0;        /* 1 means no outer gap when there is only one window */
 static int showbar                  = 1;        /* 0 means no bar */
 static int topbar                   = 1;        /* 0 means bottom bar */
-static char *fonts[]                = { "monospace:size=10", "Font Awesome 5 Free Regular:style=Regular" };
+static char *fonts[]                = { "monospace:size=10", "font awesome 5 free regular:style=regular" };
 static char normbgcolor[]           = "#222222";
 static char normbordercolor[]       = "#444444";
 static char normfgcolor[]           = "#bbbbbb";
@@ -79,20 +79,20 @@ static int resizehints = 0;    /* 1 means respect size hints in tiled resizals *
 // t y u i f
 static const Layout layouts[] = {
     /* symbol  arrange function */
-    { "[]",     tile },                     /* Default: Master on left, slaves on right; super + t; []= */
-    { "[]",     bstack },                   /* Master on top, slaves on bottom; super + shift + t; TTT */
+    { "",     tile },                     /* Default: Master on left, slaves on right; super + t; []= */
+    { "",     bstack },                   /* Master on top, slaves on bottom; super + shift + t; TTT */
 
-    { "[]",     spiral },                   /* Fibonacci spiral; super + y; [@] */
-    { "[]",      dwindle },                  /* Decreasing in size right and leftward; super + shift + y; [\\] */
+    { "",     spiral },                   /* Fibonacci spiral; super + y; [@] */
+    { "",     dwindle },                  /* Decreasing in size right and leftward; super + shift + y; [\\] */
 
-    { "[]",      deck },                     /* Master on left, slaves in monocle-like mode on right; super + u; [D] */
-    { "[]",      monocle },                  /* All windows on top of eachother; super + shift + u; [M] */
+    { "",     deck },                     /* Master on left, slaves in monocle-like mode on right; super + u; [D] */
+    { "",     monocle },                  /* All windows on top of eachother; super + shift + u; [M] */
 
-    { "[]",      centeredmaster },           /* Master in middle, slaves on sides; super + i; |M| */
-    { "[]",      centeredfloatingmaster },   /* Same but master floats; super + shift + i; >M> */
+    { "",     centeredmaster },           /* Master in middle, slaves on sides; super + i; |M| */
+    { "",     centeredfloatingmaster },   /* Same but master floats; super + shift + i; >M> */
 
-    { "[]",      NULL },                     /* no layout function means floating behavior; super + f;><> */
-    { NULL,        NULL },
+    { "",     NULL },                     /* no layout function means floating behavior; super + f;><> */
+    { NULL,    NULL },
 };
 
 /* key definitions */
@@ -203,7 +203,7 @@ static Button buttons[] = {
     { ClkStatusText,        0,              Button5,        sigdwmblocks,   {.i = 5} },
     { ClkStatusText,        ShiftMask,      Button1,        sigdwmblocks,   {.i = 6} },
 #endif
-    { ClkStatusText,        ShiftMask,      Button3,        spawn,               SHCMD(TERMINAL " -e nvim ~/.local/src/dwmblocks/config.h") },
+    { ClkStatusText,        ShiftMask,      Button3,        spawn,          SHCMD(TERMINAL " -e nvim ~/.local/src/dwmblocks/config.h") },
     { ClkClientWin,         MODKEY,         Button1,        movemouse,      {0} },
     { ClkClientWin,         MODKEY,         Button2,        defaultgaps,    {0} },
     { ClkClientWin,         MODKEY,         Button3,        resizemouse,    {0} },
