@@ -61,6 +61,9 @@ static const Rule rules[] = {
     { NULL,                 NULL,       "Event Tester",   0,            0,           0,         1,        -1 },
     { NULL,                 "spterm",   NULL,             SPTAG(0),     1,           1,         0,        -1 },
     { NULL,                 "spcalc",   NULL,             SPTAG(1),     1,           1,         0,        -1 },
+    { NULL,                 "st",       NULL,             0,            0,           1,         0,        -1 },
+    // make any terminal instance named "sp" float; example: `$TERMINAL -n sp -e $EDITOR ...` for st
+    { NULL,                 "sp",       NULL,             0,            1,           1,         0,        -1 },
     { "jetbrains-pycharm",  NULL,       NULL,             1 << 1,       0,           0,         0,        -1 },
     { "jetbrains-clion",    NULL,       NULL,             1 << 1,       0,           0,         0,        -1 },
     { "jetbrains-toolbox",  NULL,       NULL,             1 << 1,       1,           0,         0,        -1 },
@@ -162,7 +165,7 @@ static Key keys[] = {
     { MODKEY|ShiftMask,             XK_0,                  tag,            {.ui = ~0 } },
     { MODKEY,                       XK_q,                  killclient,     {0} },
     { MODKEY|ShiftMask,             XK_Return,             togglescratch,  {.ui = 0 } },
-    { MODKEY|ShiftMask,             XK_apostrophe,         togglescratch,  {.ui = 1 } },
+    { MODKEY|ShiftMask,             XK_c,                  togglescratch,  {.ui = 1 } },
     { MODKEY,                       XK_s,                  togglesticky,   {0} },
     { MODKEY,                       XK_t,                  setlayout,      {.v = &layouts[0]} },
     { MODKEY|ShiftMask,             XK_t,                  setlayout,      {.v = &layouts[1]} },
